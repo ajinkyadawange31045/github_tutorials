@@ -75,16 +75,22 @@ cloud
 
 18) fork means to make a copy of someone elses repo in our github
 
-19) 
+- fork, clone, (all concept)
+- commit, status, log, push, pull.
+- updating remote repos
+- contributions (sync fork, create pull request, how to merge pull request, starting discussion)
+- connecting remote and local repo.
+- from whre to clone, and where to push? Done.
+- Conflict resolution discussed.
+	- when use don't do git pull
+	- changes are made in same line, (conflict while pulling)
+		- before commiting (it aborts - asks to use stash)
+		- after commiting (mutual understanding)
 
 
 
 
 
-
-
-
- 
 
 
 
