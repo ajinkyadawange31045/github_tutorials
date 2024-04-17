@@ -1,0 +1,92 @@
+github is a repository server
+
+project source code will be providedd
+
+github is cloud platform
+
+it provides monitoring access
+
+github is like a platform, which uses git as Version control software
+
+Github is owned by Microsoft
+
+launched in 2008
+
+Ruby 
+
+gitclient softtware is used to connect and pwerform the operatiosn in the github
+
+- download git
+
+
+on premises
+- own datacenter
+- maintain 
+
+
+cloud
+- online datacenter
+---------------------------------------------------------------------------------------------------------------------
+
+1. git init
+
+2) ls (list, all the files and folders in the directory)
+
+3) ls -a 
+
+4) mkdir <file-name> (creates directory)
+
+5) touch <filename> (create a file)
+
+6) git status (shows the status of the folder and files, - tracked or untracked?)
+
+7) rm <file name>  (to remove the file)
+
+8) git add <file name>  (to add the particular file to staging area)
+
+9) git add . 
+	(this will add all the files to staging area)
+
+10) git restore --staged <filename>
+	(to unstage the staged files)
+
+11) git commit -m "This is my first commit"
+	(this will commit the changes to local repo)
+   git commit -m "This is my first commit" <filename>
+		(to commit specific file)
+
+12)   git config --global user.email "you@example.com"
+      git config --global user.name "Your Name"
+		(it will confirm our identity with git)
+
+13) git log 
+	(entire commit history)
+
+14) 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
