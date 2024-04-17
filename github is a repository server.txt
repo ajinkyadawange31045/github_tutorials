@@ -51,7 +51,7 @@ cloud
 	(to unstage the staged files)
 
 11) git commit -m "This is my first commit"
-	(this will commit the changes to local repo)
+	(this will commit all the changes to local repo)
    git commit -m "This is my first commit" <filename>
 		(to commit specific file)
 
@@ -62,7 +62,24 @@ cloud
 13) git log 
 	(entire commit history)
 
-14) 
+14) git branch -M main
+	(to create a branch named main)
+
+15) git remote add origin https://github.com/ajinkyadawange31045/github_tutorials.git
+
+16) git push -u origin main
+	( to push the 
+
+17 ) git clone https://github.com/ajinkyadawange31045/github_tutorials.git
+	(to download the repo)
+
+18) fork means to make a copy of someone elses repo in our github
+
+19) 
+
+
+
+
 
 
 
