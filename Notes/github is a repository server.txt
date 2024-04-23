@@ -87,6 +87,66 @@ cloud
 		- before commiting (it aborts - asks to use stash)
 		- after commiting (mutual understanding)
 
+---------------------------------------------------------------------------------------
+
+Git stash
+-> It is used to record current changes and make the working directory clean.
+
+WD --- Staging area
+
+1) git stash
+	(it stores the changes in the stack)
+2) git stash list
+	(it lists down all the stash we made)
+3) git stash pop
+	(It will removes and return the last updated item)
+3) git stash clear
+	(clear the entire stash)
+
+Git branches
+- In Git, a branch is a new/separate version of the main repository
+- dev env
+	- main
+	- FE
+	- BE (develop)
+	- Testing
+	- demo
+	- release
+	- research
+
+1) git branch
+	(checking current branch)
+2) git branch <branch-name>
+	(to create new branch)
+3) git checkout <branch-name>
+	(checkout is the command used to check out a branch. Moving us from the current branch, to the one specified at the end of the command)
+
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

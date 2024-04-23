@@ -1,0 +1,210 @@
+Linux 
+
+In realtime we will be using linux OS only to setup infrastructure required to run our application
+- Linux os is not only for administrators, 
+	- even developers, testers, will also be working on linux os in real time to monitor our application and application servers.
+
+History of Linux
+- UNIX 
+- linus, he suggested his changes to unix.
+- and finally created his own os
+- he used minux os, (Linus + minux = Linux)
+- He released the OS source code for all. (open source operating system)
+
+- As it is open source, many companies and people modify according to their needs and requirement and release them into market with different names
+- ubuntu os, redhat, cent OS, Fedora, Kali linux, debian, open sesu, etc
+- Linux setup
+	- Use virtual box (with hypervisor)
+	- Use cloud
+	- Have parallel OS.
+
+
+placements
+- DSA
+- OS
+- DBMS
+- CN 
+- interviewbit.com (most asked questions of all topics)
+
+- Git and Github
+- Linux
+- (ML, WebD, Cyber security, cloud, etc)
+- Atleast 2 projects.
+
+
+In linux, everything will be represented as file.
+we have 3 types of files
+- ordinary file(normal file)
+- Directory file
+- Link file
+
+
+LINUX
+
+1) whoami
+	- to check username of current user.
+2) pwd 
+	-> present working directory
+3) date
+	-> display date
+4) cal 
+	-> display calender
+5) touch
+	-> creating new file
+	-> $ touch ram.txt
+
+6) ls
+	-> list directories or files (to display flies in current workspace)
+	-> $ ls
+
+7) mkdir
+	-> create new directory
+	-> $ mkdir spirituality
+
+8) ls -a
+	-> it will display all files including hidden files.
+
+9) code .
+	-> It will open code editor
+
+10) cat
+	-> it stands for concatenate
+	-> to create a file with data
+	-> $ cat > radha.txt
+		-> write something, and then
+		-> "ctrl + D"
+	-> $ cat radha.txt
+	-> $ cat >> radha.txt
+		-> to append to current text
+	-> $ cat > radha.txt
+		-> it will edit the file.
+11) rm
+	-> to remove the file
+	-> $ rm filename.txt
+
+12) rmdir 
+	-> remove empty directory
+	-> $ rmdir <directory-name>
+	-> to remove non-empty directory
+		-> $ rm -r <directory-name>
+
+13) history
+	-> It shows what all commands we have excecuted
+
+14) clear
+	-> It clears the terminal completely.
+
+ "ctrl + l" -> It will align the present commands.
+
+15) Options of 'ls' command
+$ ls (will display files in alphabetical order)
+$ ls -a (will show all the files)
+$ ls -r (will display files in reverse of alphabetical order)
+$ ls -l (It will display long listing of files)
+$ ls -t (It will display file with last modified date and time)
+$ ls -lr (combination of both the command)
+Note: order doesn't matter in combinations of the commands.
+
+in "ls -l"
+	-> all files are starting with hyphen(-)
+	-> and all directoriies starts with "d"
+16) ls <directory-name>
+	-> will display all the files inside the directory
+
+17) cd 
+	-> change directory
+	-> $ cd <directory-name>
+$ cd .. (to come out of directory)
+
+
+18) to see file content with line number
+$ cat -n filename.txt
+
+19) to create multiple files with one command
+$ touch f1.txt f2.txt
+
+20) Copy data from one file to another
+$ cat radha.txt > f1.txt
+
+21) To reverse the content in the file(last line at top)
+$ tac radha.txt
+
+22) To reverse the content of each line. 
+$ rev radha.txt
+
+23) head
+	-> head command will display data from top(default 10 lines)
+	-> $ head <filename>
+	-> $ head -n 13 <filename> 
+		-> it will show data upto 13 lines
+
+24) tail 
+	->  same thing from bottom
+	-> $ tail -n 13 radha.txt
+		-> it will show last 13 lines.
+	-> by default it will show, last 10 lines.
+
+25) wc
+	-> word count
+	-> $ wc radha.txt
+	-> 15  21 164 radha.txt
+		-> 15 is number of lines
+		-> 21 is total number of words
+		-> 164 is total number of character
+
+26) copy
+$ cp m2.txt m1.txt (copy data in m2 in m1)
+(we cannot copy from multiple commands into one)
+
+we can do that using cat
+$ cat m2.txt m3.txt >> m1.txt (it will append the data from m2 and m3 file into m1)
+
+
+27) Rename
+$ mv m3.txt m5.txt (it will rename m3.txt as m5.txt)
+
+We can use this command for renaming and moving the files
+$ mv f2.txt spirituality/
+
+
+28) Comparing the files
+$ cmp f1.txt f2.txt 
+$ diff f1.txt f2.txt (it will display difference)
+_______________________________________________________
+
+
+29) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
