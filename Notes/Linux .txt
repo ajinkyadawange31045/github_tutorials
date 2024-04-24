@@ -18,6 +18,7 @@ History of Linux
 	- Use cloud
 	- Have parallel OS.
 
+------------------------------------------------------------------------------------------
 
 placements
 - DSA
@@ -38,6 +39,8 @@ we have 3 types of files
 - Directory file
 - Link file
 
+
+------------------------------------------------------------------------------------------
 
 LINUX
 
@@ -173,9 +176,291 @@ $ diff f1.txt f2.txt (it will display difference)
 _______________________________________________________
 
 
-29) 
+29) GREP
+-> Global regular expression print
+-> It will process test line by line and print any line which matches given pattern
+
+$ grep '<word>' <filename>
+	- it will search for the line which have "word" in it
+$ grep 'rama' ram.txt
+
+Note: GREP is case-sensitive command
+	-> 
+
+$ grep -i 'rama' ram.txt
+	-> for non case sensitive search
+
+$ grep -R 'Tobago' bhakti/
+	- It will search for that word under all the directories.
 
 
+- to install grep.
+$ sudo yum install grep
+	- for amazon linux
+
+Options in grep:
+-i : ignores case sensitivity
+-n: display the matched line and their line number
+-l: display only file name that matches with the pattern
+-h: display matched lines without file names
+-R: display matched lines with file names
+-c: This prints only the count of files that matches the given pattern
+
+___________________________________________________________
+
+30) Working with text editors in Linux
+
+= The default editor that comes with unix is called vi.
+= vi (Visual editor)
+= Using vi editor, we can edit an existing file or create a new file from scratch. We can also use this editor to just read a text file.
+
+= modes of operations in vi editor
+1) Command mode
+2) Insert mode
+3) Escape mode
+
+1) Command mode
+= when we enter vi, then by default it is in command mode
+= This mode allow us to move through a file and to delete copy or paste a piece of text
+= to enter into command mode, from any other mode, it requires pressing the [ESC] key. 
+
+2) Insert mode
+- This mode enables you to insert text into the file
+- All things you type here are considered as input
+- To enter into insert mode from command mode, type "i".
+- To come out of insert mode, type 'ESC'
+
+3) Escape mode
+- Line mode is invoked by typing a colon[:] in command mode
+- The cursor will jump to the last line of the screen and vi will wait for a command
+- Thsi mode eenables you to perform tasks such as saving files, executing commands.
+
+
+To enter into vi mode:
+$ vi <filename>
+	= It will create new file if it doesn't already exists othewise opens existing file.
+$ vi -R <filename>
+	= Opens an existing file in readonly mode
+$ view <filenames>
+	- this also opens in only read only mode
+
+
+
+esc +    :q!
+	- Quit file without saving changes
+esc + 	 :wq
+	- write and quit (it saves the context of the file)
+
+Usecase:
+1) We will use vi editor to insert data at particular place
+2) to edit shell script files.
+
+
+---------------------------------------------------------------
+31) SED command
+- searching
+- find
+- replace
+- insertion
+- deletion
+
+'krsna' => 'Krishna'
+
+$ sed 's/krsna/Krishna/' <filename>
+
+
+$ sed 's/krsna/Krishna/3' <filename>
+	- this is to replace the 3rd occurance
+
+$ sed 's/krsna/Krishna/g' <filename>
+	- replace all the occurances
+	- g stands for global
+
+$ sed '5d' <filename>
+	- It will delete the fifth line
+
+$ sed '$d' <filename>
+	- It will delete the last line
+
+
+To make changes permanantly we will use '-i' option
+$ sed -i 's/krsna/Krishna/' <filename>
+
+______________________________________________________________
+32) File Permissions in linux
+
+4 developers
+
+J and A : senior dev
+S and An : Jr. dev
+
+To same linux
+- config.log
+	- seniors
+		- edit, view, delete.
+	- junior
+		- view.
+
+---------------------------------------------------------
+ working with file permissions in linux os.
+$ ls -l
+drwxr-xr-x 1 gajan 197609    0 Apr 24 11:13 bhakti/
+-rw-r--r-- 1 gajan 197609   21 Apr 23 11:30 data.log
+
+d: represents, it is a directory.
+-: represents it as a file.
+
+Therefore, type of file : the starting letter.
+
+File permissions are divided into 3 segments:
+a) user (u) (users permission on the file)
+b) group (g) (group permission on the file)
+c) others (o) (others permission on the file)
+
+
+r - read
+w - Write
+x - execute
+- : No permission.
+
+
+
+filetype	user	group	others
+d		rwx	r-x	rw-
+
+= User can read, write and execute.
+= group can read and execute. (group cannot write)
+= others can read and write (others cannot execute)
+
+-----------------------------------------------------------
+33) chmod (change mode)
+- used to changed the permissions of the file
+
+u: user
+g: group
+o: others
+
+r: read
+w: write
+x: execute
+
+
+$ chmod g+w <filename>
+
+
+34) Symbolic mode for changing file permissions
+0,1,2,4
+
+number	permission
+0	No permission
+1	Execute
+2	Write
+3	Execute + Write
+4	Read
+5	Read + execute
+6	Write + read
+7	do everything
+
+
+$ chmod 777 radha.txt
+	- It means all, user-group-others can do everything
+$ chmod 765 radha.txt
+	- user: everything (rwx)
+	- group: read and write (rw-)
+	- others: read and execute (r-x)
+
+-----------------------------------------------------------
+35) Working with users, group and others.
+
+- In Linux, the sudo command stands for “SuperUser DO”. It allows specific commands to be executed with root privileges by non-root users without changing their identity or specifying the root password. 
+
+
+= creating a user:
+ 	$ sudo adduser <username>
+
+= switching between users
+	$ su - <username>
+
+Home
+	- /ubuntu
+	- /username
+
+- $ id <username>
+	- to see the informations of users.
+	- it will give userid, groupid, groups,etc.
+
+- $ sudo userdel <username>
+	- to delete a user. but directory will still be there.
+
+- $ sudo deluser --remove-home <username>
+	- for this login into ubunut and then delete it.
+	- it will completely remove it.
+---------------------------------------------------
+usergroups
+defn
+-----------------------------------
+create a group
+You can see the groups you have by opening following files
+- $ cat /etc/group
+
+to create a group:
+- $ sudo groupadd <groupname>
+
+add user to the group
+- $ sudo usermod -aG <groupname> <username>
+
+verify the group using:
+- $ id username
+
+Note: wheneveery we create a user, along with that a group is also been created
+
+delete user from a group
+- $ sudo gpasswd -d <username> <groupname>
+
+delete a group
+- $ sudo groupdel <groupname>
+_________________________________________________________
+
+36) Working with 'Find' and 'Locate' commands
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 
 
 
 
