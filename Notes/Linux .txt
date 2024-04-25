@@ -301,7 +301,7 @@ To same linux
 	- junior
 		- view.
 
----------------------------------------------------------
+-------------------------------------------------------------
  working with file permissions in linux os.
 $ ls -l
 drwxr-xr-x 1 gajan 197609    0 Apr 24 11:13 bhakti/
@@ -423,28 +423,417 @@ _________________________________________________________
 
 36) Working with 'Find' and 'Locate' commands
 
+- The locate command will search for data in local db.
+	- $locate <filename>
+	- $ locate *.txt
+		- it will locate all files with .txt extension
+
+
+- Find command will search in external file system
+	- $ find * -name radha.txt
+		- to find the file name radha in system
+	- $ find . -type f -perm 0777 -print
+		- to find files which have all permissions
+	- $ find * -type f -empty
+		- to find all empty files
+	- $ find * -type d -empty
+		- to find all empty directory.
+
+Note: find command will provide advance searching technique, using find command we can search using name and type also
+
+Note: As fidd cmd is scanning entire file system, so it will take more time to give search results.
+
+-------------------------------------------------------------
+
+37) Man command
+'man' command is like a help command.
+It is used to understand command syntax and options
+eg: $ man cat
+	- it will give all details about cat command
+	- then write wq to quit
+
+-------------------------------------------------------------
+38) To see the ip address, we use 'ifconfig'
+- $ sudo apt install net-tools
+- $ ifconfig 
+	- it stands for interface configurations
+	- often times used to modify the network configurations
+
+
+-------------------------------------------------------------
+39) 'ping' command used to check connectivity
+- $ ping <ip>/dns
+
+-------------------------------------------------------------
+40) 'curl' commnad
+- used to get response from the server 
+$ curl <url>
+
+-------------------------------------------------------------
+41) 'wget' command is used to download resources from internet
+$ wget <url>
+
+-------------------------------------------------------------
+
+42) echo
+	- is used to print
+
+43) Shell Scripting
+User --- Shell --- Kernal --- Hardware components
+
+Bash shell scripting
+____________________
+
+Bash
+____
+
+- bash is command language interpreter. It is widely avaiable on various OS and is a defualt command interpreter on Most GUI/LINUX systems. 
+- 'Bourne-Again Shell'
+
+Shell
+_____
+- Shell is responsible for reading the commands provided by user.
+- shell will verify command systems ansd will give input for kernel (if command syntax is invalid)
+
+- kernal will execute that command with hardwar
+
+
+https://linuxjourney.com/
+https://linuxsurvival.com/
+
+Types of shells:
+1) Bourne shell
+2) Bash Shell
+3) Korn
+4) Cshell
+5) Tshell
+6) Zshell
+
+Note: BASH (most commonly used)
+
+$ echo $SHELL
+	-> to check the shell available in our system
+
+Scripting
+_________
+
+- Scripting allows for an automatic command execution that would otherwisse be executed interactively one by one.
+- $ date
+- $ whoami
+- $ pwd
+- $ ls -l
+
+
+we can automate these commands by using scripting
+
+Convert the file to executable using chmod, then execute command
+
+
+steps
+1) create file (<name>.sh extension)
+2) vi and add commands
+3) update permissions
+4) run (./<name>.sh)
 
 
 
+(sha-bang)
+#!/bin/bash - add this line in every shell script
+
+abc.sh
+
+#!/bin/bash
+echo "Hi, Hare Krishna"
+read name
+echo "good morning $name"
+chmod u+x abc.sh
+
+
+read name ========  char x;
+
+
+-----------------------------------------------
+Use cases
+1) Update software packages
+2) take server logs backup
+3) Re-start server
+4) deploy latest code into server
+	- cd Utkrista-bharath-repo
+	- git stash
+	- git pull
+	- git stash pop
+	- <restart start server>  (nginx and gunicorn)
+	- <check he status of server)
+	- ping the ip address.
+
+
+for scripting we will use : 
+1) Variables - are used to store data
+	- eg: x = 10 or y = 'abc'
+2) Control statements
+	- eg: if else statements
+3) case statements
+4) loops
+5) functions
+
+if else condition syntax
+__________________________
+
+read name
+if [ $age -ge 18 ]
+then
+	echo "$name, can vote"
+else
+	echo "$name, can't vote"
+fi
+
+
+(use fi to end the if else condition)
+
+
+&& => logical AND
+-eq => equal to
+-ne => not equal to
+-lt => less than
+-le => less than equal to
+-gt => greater than
+-ge => greater than and equal to
+
+
+Command line arguments
+______________________
+The arguments which will be passed after script name at the time of execution are called command line arguments
+
+
+adding 2 numbers
+#!/bin/bash
+a = 2
+b = 3
+c = $ (($a + $b))
+echo $a + $b = $c
 
 
 
+- sleep command
+sleep 3s
+
+
+- multiline comments
+<< COMMENT
+<text>
+COMMENT
+
+----------------------------------------------------------
+case STATEMENTS
+__________________
+	
+case EXPRESSION in
+  Pattern_Case_1)
+   STATEMENTS
+   ;;
+ Pattern_Case_1)
+   STATEMENTS
+   ;;
+ Pattern_Case_N)
+   STATEMENTS
+   ;;
+ *)
+   STATEMENTS
+   ;;
+esac
+
+
+#!/bin/sh
+
+case 	"$fruit" in 
+	"apple")
+	echo "Healthy"
+	;;
+	"banana")
+	echo "fatty"
+	;;
+	"Mango")
+	echo "favorite"
+	;;
+	*)
+	echo "hehe"
+	;;
+esac
+
+
+----------------------------------------------------------
+loops
+-> for.sh
+#!/bin/bash
+for i in 1 2 3 4 5
+do
+  echo "Looping ... number $i"
+done
+
+
+-> For loop other syntax
+for ((i=1;i<=10;i++))
+do
+	echo "$i"
+done
+
+
+-> while loop
+while.sh
+#!/bin/sh
+INPUT_STRING=hello
+while [ "$INPUT_STRING" != "bye" ]
+do
+  echo "Please type something in (bye to quit)"
+  read INPUT_STRING
+  if [ "$INPUT_STRING" = "bye" ]
+  then
+	echo "Get lost: $INPUT_STRING"
+  else
+	echo "You typed: $INPUT_STRING"
+ fi
+done
+
+------------------------------------------------------------------
+
+
+Functions
+
+function func_name(){
+	commands to be executed
+}
+
+
+read name
+function welcome(){
+	echo "hello"
+	echo "$name"
+}
+
+__________________________________________________
+
+44) Check the availability of disk space
+$ df
+$ df -h 
+	- human readable
 
 
 
+Sure, here's a list of some important networking commands that are commonly used in software jobs:
+
+1. **ping**: Test the reachability of a host on an IP network and measure the round-trip time for packets sent to it.
+   Example: `ping google.com`
+
+2. **traceroute / tracert**: Discover the network path from your host to a destination host, showing all intermediate hops.
+   Example: `traceroute google.com`
+
+3. **netstat**: Display network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
+   Example: `netstat -ano`
+
+4. **nslookup / dig**: Query DNS servers to obtain domain name or IP address mapping information.
+   Example: `nslookup google.com`
+
+5. **ifconfig / ip**: Configure and display network interface parameters.
+   Example: `ifconfig eth0`
+
+6. **route**: View and manipulate the IP routing table.
+   Example: `route -n`
+
+7. **arp**: Display and modify the Address Resolution Protocol (ARP) cache.
+   Example: `arp -a`
+
+8. **ssh**: Securely connect to a remote host or manage a remote system over a network.
+   Example: `ssh username@hostname`
+
+9. **scp**: Securely copy files between hosts on a network.
+   Example: `scp file.txt username@hostname:/path/to/destination`
+
+10. **ftp / sftp**: Transfer files to and from a remote network host.
+    Example (FTP): `ftp ftp.example.com`
+    Example (SFTP): `sftp username@hostname`
+
+11. **curl / wget**: Download files from a server via HTTP, HTTPS, or FTP.
+    Example (curl): `curl -O https://example.com/file.txt`
+    Example (wget): `wget https://example.com/file.txt`
+
+12. **telnet**: Communicate with a remote host using the Telnet protocol.
+    Example: `telnet hostname port`
+
+13. **iptables / ufw**: Configure firewall rules and manage packet filtering.
+    Example (iptables): `iptables -A INPUT -p tcp --dport 22 -j ACCEPT`
+    Example (ufw): `ufw allow 22/tcp`
+
+14. **tcpdump**: Capture and analyze packets on a network interface.
+    Example: `tcpdump -i eth0`
+
+These commands cover a range of tasks related to network troubleshooting, diagnostics, configuration, and communication, which are commonly encountered in software development and IT operations roles.
 
 
+1. ping: ping google.com
 
+2. traceroute / tracert: traceroute google.com
 
+3. netstat: netstat -ano
 
+4. nslookup / dig: nslookup google.com
 
+5. ifconfig / ip: ifconfig eth0
 
+6. route: route -n
 
+7. arp: arp -a
 
+8. ssh: ssh username@hostname
 
+9. scp: scp file.txt username@hostname:/path/to/destination
 
+10. ftp / sftp:
+    FTP: ftp ftp.example.com
+    SFTP: sftp username@hostname
 
+11. curl / wget:
+    curl: curl -O https://example.com/file.txt
+    wget: wget https://example.com/file.txt
 
+12. telnet: telnet hostname port
+
+13. iptables / ufw:
+    iptables: iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+    ufw: ufw allow 22/tcp
+
+14. tcpdump: tcpdump -i eth0
+
+_______________________________________________________________________________________________________
+
+1. ls: ls -l
+2. cd: cd /path/to/directory
+3. pwd: pwd
+4. mkdir: mkdir new_directory
+5. rm: rm file.txt
+6. cp: cp source_file destination_directory
+7. mv: mv old_file new_name
+8. touch: touch new_file.txt
+9. nano / vi / vim:
+   nano: nano filename.txt
+10. grep: grep "pattern" file.txt
+11. find: find /path/to/search -name "pattern"
+12. chmod: chmod 755 file.sh
+13. chown: chown user:group file.txt
+14. tar: tar -cvzf archive.tar.gz directory
+15. gzip / gunzip:
+    gzip: gzip file.txt
+16. df: df -h
+17. du: du -sh /path/to/directory
+18. top / htop: top
+19. ps: ps aux
+20. kill: kill PID
+21. sudo: sudo apt-get update
+22. apt / yum:
+    apt: sudo apt-get install package_name
+23. hostname: hostname
+24. uptime: uptime
+25. cat: cat file.txt
+______________________________________________________________________________
 
 
 
