@@ -1,0 +1,87 @@
+Devops with AWS
+
+1) Devops world
+2) Linux operation world
+3) AWS cloud
+4) Devop tools
+
+
+
+module1
+
+What is devops?
+SDLC
+waterfall methodology 
+Agile methodology
+
+
+------------------------------------------------------------
+What is devops?
+- it is culture or process or set of guidelines
+- devops is used to automate the delivery of the project easier and quicker
+- DevOps (Development + Operations)
+- DevOps is a set of practices that combines software development and IT operations.
+- AIM: to reduce SDLC period, and deliver the project to client quickly.
+
+
+Developer team 				Tester team		Operations team
+It writes code.				(it test)		Hosts the s/w.
+
+ 0  					 0				 0
+'|' 					'|'				'|'
+' '					' '				' '
+ 0  					 0				 0
+'|' 					'|'				'|'
+' '					' '				' '
+ 0  					 0				 0
+'|' 					'|'				'|'
+' '					' '				' '
+
+
+DevOps cycle
+25% code completed		25% code completed		25% code completed
+(Home, about us)
+
+What is SDLC?
+- It reprents how a s/w project will be developed and deliver.
+- It contains serveral phases
+1. Req. Gathering
+2. Req. Analysis
+3. Req. Design
+4. Req. Development
+5. Testing
+6. Deployment
+7. Deliver
+
+
+|           |
+|___________|
+||
+||
+||
+
+
+SDLC Methodologies
+__________________
+
+1) Waterfall methodology
+2) Agile Methodology
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
